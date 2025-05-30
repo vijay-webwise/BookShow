@@ -7,21 +7,26 @@ import Footer from "./components/Footer/Footer";
 import EventDetails from "./pages/EventDetails/EventDetails";
 import BuyPage from "./pages/BuyPage/BuyPage";
 import CheckoutPage from "./pages/Checkout/CheckoutPage";
+import AboutUsPage from "./pages/AboutUs/Aboutus";
+import CategoryShows from "./components/CategoryDetails/CategoryDetails";
 
 const App: FC = () => {
   return (
     <>
-      <Sidebar />
       <Router>
+      <Sidebar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFoundPage />} />
-          <Route path="/events" element={<EventDetails />} />
+          <Route path="/events/:title" element={<EventDetails />} />
           <Route path="/preference" element={<BuyPage />} />
-           <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/about-us" element={<AboutUsPage />} />
+          <Route path="/category/:title" element={<CategoryShows />} />
         </Routes>
-      </Router>
       <Footer />
+
+      </Router>
     </>
   );
 };

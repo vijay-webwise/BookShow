@@ -123,3 +123,73 @@
     padding: 5px;
   }
 }
+
+
+@media (max-width: 768px) {
+  .carouselImage {
+    height: 60vh;
+  }
+
+  .carouselCaption {
+    left: 20px;
+    bottom: 20px;
+    padding: 8px;
+  }
+
+  .carouselLogo {
+    width: 90%;
+    font-size: 1.2rem;
+  }
+
+  .movieDetailsLine {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  .movieDescription {
+    width: auto;
+    font-size: 12px;
+    margin-top: 12px;
+  }
+
+  .tag {
+    font-size: 12px;
+    padding: 2px 6px;
+    margin-right: 6px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .carouselImage {
+    height: 45vh;
+  }
+
+  .carouselCaption {
+    left: 10px;
+    bottom: 10px;
+    padding: 6px;
+  }
+
+  .carouselLogo {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .movieDetailsLine {
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .movieDescription {
+    font-size: 11px;
+    margin-top: 10px;
+  }
+
+  .tag {
+    font-size: 11px;
+    padding: 2px 4px;
+    margin-right: 4px;
+  }
+}

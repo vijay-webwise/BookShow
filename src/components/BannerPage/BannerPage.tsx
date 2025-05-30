@@ -48,7 +48,7 @@ const BannerPage: FC = () => {
               <div className={styles.movieDetailsLine}>
                 <p>Timings</p>
                 <p>{movie.year}</p>
-                <p >{movie.languages}</p>
+                <p>{movie.languages}</p>
               </div>
               <div className={styles.movieDescription}>{movie.description}</div>
               <div className={styles.tags}>
@@ -59,7 +59,12 @@ const BannerPage: FC = () => {
                 ))}
               </div>
               <div className={styles.watchButton}>
-                <button onClick={() => navigate(`/events`)} className={styles.button}>
+                <button
+                  onClick={() =>
+                    navigate(`/events/${movie.title}`, { state: { movie } })
+                  }
+                  className={styles.button}
+                >
                   Buy Tickets
                 </button>
               </div>

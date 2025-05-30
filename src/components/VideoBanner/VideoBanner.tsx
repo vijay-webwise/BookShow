@@ -20,7 +20,7 @@ const videos: Video[] = [
     videoUrl:
       "https://res.cloudinary.com/dy9evkddw/video/upload/v1748591254/etovqgbe2unuydheqkzk.mp4",
   },
-   {
+  {
     id: 3,
     title: "THE DARK BEAUTY",
     description: `Shadow Blitzstrike is a dynamic and elusive move executed with lightning-fast precision. The user channels dark`,
@@ -77,7 +77,13 @@ const VideoBanner: FC = () => {
                 <h1 className={styles.title}>{video.title}</h1>
                 <p className={styles.description}>{video.description}</p>
                 <div className={styles.buttonSection}>
-                  <button className={styles.watchButton} onClick={handleMovieClick}>Watch Now</button>
+                  <span
+                    style={{ cursor: "arrow" }}
+                    className={styles.watchButton}
+                    onClick={handleMovieClick}
+                  >
+                    Sponsored
+                  </span>
                 </div>
               </div>
             </div>

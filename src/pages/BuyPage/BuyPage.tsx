@@ -1,73 +1,76 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const BuyPage = () => {
-    const navigate = useNavigate();
-  const event = {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const showDetails = location.state?.showDetails;
+  const show = {
     id: 2,
-    imageUrl:
-      "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-kisi-ko-batana-mat-ft-anubhav-singh-bassi-0-2025-3-9-t-8-12-52.jpg",
-    title: "Brahmastra",
-    year: 2022,
-    languages: "Mumbai",
+    imageUrl: showDetails?.imageUrl,
+    title: showDetails?.title,
+    year: showDetails?.year || "2024",
+    languages: showDetails?.languages || "Mumbai",
     logoUrl:
       "https://in.bookmyshow.com/events/go-watch-manoj-live-ft-manoj-prabakar/ET00398271",
-    tags: ["Fantasy", "Action", "Mystery", "Adventure"],
-    ua: "16+",
+    tags: showDetails?.tags || ["Stand Up", "Fun", "Comedy"],
+    ua: showDetails?.ua || "18+",
     description:
-      "An orphan soldier, Lieutenant Ram's life changes, after he gets a letter from a girl named Sita. ",
-    tickets: [
-      { type: "SILVER", price: 799 },
-      { type: "GOLD", price: 999 },
-      { type: "PLATINUM", price: 1499 },
-      { type: "DIAMOND", price: 1999 },
+      showDetails?.description ||
+      "After the great success of his previous show Bas kar bassi, Anubhav Singh Bassi is coming back to perform live on stage. This time, he will bring a whole new set of funny stories and jokes that will keep you entertained. Get ready to enjoy an exciting and hilarious performance that will make you laugh uncontrollably and leave you in high spirits.",
+    tickets: showDetails?.tickets || [
     ],
   };
 
   const [cart, setCart] = useState<Cart>({});
 
-interface CartItem {
+  console.log(cart)
+
+  interface CartItem {
     quantity: number;
     price: number;
-}
+  }
 
-type Cart = Record<string, CartItem>;
+  type Cart = Record<string, CartItem>;
 
-const updateCart = (type: string, price: number, change: number) => {
+  const updateCart = (type: string, price: number, change: number) => {
     setCart((prev: Cart) => {
-        const quantity = (prev[type]?.quantity || 0) + change;
-        if (quantity <= 0) {
-            const { [type]: _, ...rest } = prev;
-            return rest;
-        }
-        return { ...prev, [type]: { quantity, price } };
+      const quantity = (prev[type]?.quantity || 0) + change;
+      if (quantity <= 0) {
+        const { [type]: _, ...rest } = prev;
+        return rest;
+      }
+      return { ...prev, [type]: { quantity, price } };
     });
-};
+  };
 
   const totalAmount = Object.values(cart).reduce<number>(
     (acc, item) => acc + item.quantity * item.price,
     0
   );
 
+
+
   return (
     <div className="min-h-screen bg-black text-white font-sans">
       {/* Hero Section */}
       <div className="relative w-full h-[80vh] overflow-hidden">
         <img
-          src={event.imageUrl}
-          alt={event.title}
+          src={show.imageUrl}
+          alt={show.title}
           className="w-full h-full object-cover object-center opacity-40"
         />
         <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-start px-8 md:px-24 bg-gradient-to-r from-black via-black/70 to-transparent">
           <p className="uppercase text-sm text-rose-500 tracking-widest mb-2">
             Oriole Entertainment Presents
           </p>
-          <h1 className="text-5xl font-extrabold mb-2">{event.title}</h1>
+          <h1 className="text-5xl font-extrabold mb-2">{show.title}</h1>
           <p className="text-lg text-gray-300 max-w-xl mb-4">
-            {event.description}
+            {show.description}
           </p>
           <div className="flex gap-3 flex-wrap mb-4">
-            {event.tags.map((tag) => (
+            {show.tags.map((tag: any) => (
               <span
                 key={tag}
                 className="bg-gray-800 px-3 py-1 rounded-full text-sm border border-gray-600"
@@ -81,7 +84,6 @@ const updateCart = (type: string, price: number, change: number) => {
 
       {/* Info Section */}
       <div className="max-w-5xl mx-auto px-6">
-
         {/* Ticket Selection */}
         <div className="position-absolute z-10 bg-gray-900 rounded-lg p-6 mt-8">
           <h2 className="text-2xl font-semibold mb-4">Select Tickets</h2>
@@ -89,7 +91,7 @@ const updateCart = (type: string, price: number, change: number) => {
             You can add up to 10 tickets only
           </p>
           <div className="space-y-4">
-            {event.tickets.map((ticket) => {
+            {show.tickets.map((ticket: any) => {
               const quantity = cart[ticket.type]?.quantity || 0;
               return (
                 <div
@@ -147,7 +149,10 @@ const updateCart = (type: string, price: number, change: number) => {
               Tickets
             </p>
           </div>
-          <button className="bg-rose-600 hover:bg-rose-700 text-white font-semibold py-2 px-6 rounded" onClick={() => navigate("/checkout")}>
+          <button
+            className="bg-rose-600 hover:bg-rose-700 text-white font-semibold py-2 px-6 rounded"
+            onClick={() => navigate("/checkout", {state:{totalAmount,cart}})}
+          >
             Proceed
           </button>
         </div>

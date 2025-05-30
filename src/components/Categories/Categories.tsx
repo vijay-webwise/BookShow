@@ -4,7 +4,12 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import { FaArrowRight } from "react-icons/fa";
 import styles from "./Categories.module.css";
-
+import KidsAndFun from "../../../public/kidsandfun.jpg";
+import Comedy from "../../../public/standupcomedy.jpg";
+import Drama from "../../../public/theatreshows.jpg";
+import Horror from "../../../public/horror.jpg";
+import Concerts from "../../../public/musicshows.jpg";
+import { useNavigate } from "react-router-dom";
 interface Category {
   id: number;
   name: string;
@@ -15,54 +20,32 @@ const categories: Category[] = [
   {
     id: 1,
     name: "Kids and Family",
-    imageUrl:
-      "https://res.cloudinary.com/dqcr5yn0b/image/upload/v1721640429/kids_fojv4b.jpg",
-  },
-  {
-    id: 2,
-    name: "Web and TV Series",
-    imageUrl:
-      "https://res.cloudinary.com/dqcr5yn0b/image/upload/v1721640429/webseries_zh4gvt.jpg",
-  },
-  {
-    id: 3,
-    name: "Action",
-    imageUrl:
-      "https://res.cloudinary.com/dqcr5yn0b/image/upload/v1721640428/action_rv2ahg.jpg",
+    imageUrl: KidsAndFun,
   },
   {
     id: 4,
     name: "Comedy",
-    imageUrl:
-      "https://res.cloudinary.com/dqcr5yn0b/image/upload/v1721640428/comedy_dspxon.jpg",
+    imageUrl: Comedy,
   },
   {
     id: 5,
-    name: "Drama",
-    imageUrl:
-      "https://res.cloudinary.com/dqcr5yn0b/image/upload/v1721640684/drama_k7bv3z.jpg",
+    name: "Theatre and Drama",
+    imageUrl: Drama,
   },
   {
     id: 6,
     name: "Horror",
-    imageUrl:
-      "https://res.cloudinary.com/dqcr5yn0b/image/upload/v1721640428/horror_gc7cwh.png",
+    imageUrl: Horror,
   },
   {
     id: 7,
-    name: "Science Fiction",
-    imageUrl:
-      "https://res.cloudinary.com/dqcr5yn0b/image/upload/v1721640428/scifi_j1sfck.jpg",
-  },
-  {
-    id: 8,
-    name: "Documentary",
-    imageUrl:
-      "https://res.cloudinary.com/dqcr5yn0b/image/upload/v1721640429/docu_oehon6.jpg",
+    name: "Concerts",
+    imageUrl: Concerts,
   },
 ];
 
 const Categories: FC = () => {
+  const navigate = useNavigate();
   const settings = {
     dots: false,
     infinite: true,
@@ -90,7 +73,7 @@ const Categories: FC = () => {
         breakpoint: 480,
         settings: {
           slidesToShow: 2,
-          arrows: false
+          arrows: false,
         },
       },
     ],
@@ -101,7 +84,11 @@ const Categories: FC = () => {
       <h2 className={styles.title}>Explore Categories</h2>
       <Slider {...settings}>
         {categories.map((category) => (
-          <div key={category.id} className={styles.carouselItem}>
+          <div
+            onClick={() => navigate(`/category/${category.name}`)}
+            key={category.id}
+            className={styles.carouselItem}
+          >
             <div className={styles.categoryCard}>
               <img
                 src={category.imageUrl}
