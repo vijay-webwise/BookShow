@@ -118,10 +118,10 @@ const CategoryShows = () => {
               <img
                 src={show.imageUrl}
                 alt={show.title}
-                className="w-full h-48 object-cover"
+                className="w-full  object-cover"
               />
               <div className="p-4">
-                <h3 className="text-xl font-semibold mb-2">{show.title}</h3>
+                <h3 className="text-xl font-semibold mb-2 truncate">{show.title}</h3>
                 <p className="text-sm text-gray-400 mb-1">{show.date}</p>
                 <p className="text-sm text-gray-400">{show.location}</p>
                 <button

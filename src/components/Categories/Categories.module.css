@@ -55,6 +55,11 @@
     position: relative;
     transition: border 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    height:390px;
+  }
+
+  .categoryCard img {
+     height:330px;
   }
   
   .categoryImage {
@@ -120,4 +125,8 @@
     .categoryName {
       font-size: 12px;
     }
+
+     .categoryCard {
+    height:250px;
+  }
   }

@@ -81,9 +81,9 @@ const CheckoutPage = () => {
             <h2 className="text-lg font-semibold">Your Booking Summary</h2>
             <p className="text-sm text-gray-400">{totalTickets} Ticket(s)</p>
             <p className="text-sm text-gray-400 mt-1">
-              Fri, 15 Aug, 2025 - 08:00 PM
+              {/* Fri, 15 Aug, 2025 - 08:00 PM */}
             </p>
-            <p className="text-sm text-gray-400">Venue: HK Hall, Ahmedabad</p>
+            {/* <p className="text-sm text-gray-400">Venue: HK Hall, Ahmedabad</p> */}
             {ticketDetails.map((ticket) => (
               <p className="text-sm mt-1" key={ticket.type}>
                 {ticket.type.toUpperCase()} (₹{ticket.price}): {ticket.quantity}{" "}

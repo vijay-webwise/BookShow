@@ -37,16 +37,40 @@ const BuyPage = () => {
 
   type Cart = Record<string, CartItem>;
 
+  // const updateCart = (type: string, price: number, change: number) => {
+  //   setCart((prev: Cart) => {
+  //     const quantity = (prev[type]?.quantity || 0) + change;
+  //     if (quantity <= 0) {
+  //       const { [type]: _, ...rest } = prev;
+  //       return rest;
+  //     }
+  //     return { ...prev, [type]: { quantity, price } };
+  //   });
+  // };
+
+  
   const updateCart = (type: string, price: number, change: number) => {
-    setCart((prev: Cart) => {
-      const quantity = (prev[type]?.quantity || 0) + change;
-      if (quantity <= 0) {
-        const { [type]: _, ...rest } = prev;
-        return rest;
-      }
-      return { ...prev, [type]: { quantity, price } };
-    });
-  };
+  setCart((prev: Cart) => {
+    const totalQuantity = Object.values(prev).reduce(
+      (sum, item) => sum + item.quantity,
+      0
+    );
+
+    const currentQty = prev[type]?.quantity || 0;
+    const newQty = currentQty + change;
+
+    // Prevent more than 10 total tickets
+    if (change === 1 && totalQuantity >= 10) return prev;
+
+    // Remove if quantity drops to 0 or less
+    if (newQty <= 0) {
+      const { [type]: _, ...rest } = prev;
+      return rest;
+    }
+
+    return { ...prev, [type]: { quantity: newQty, price } };
+  });
+};
 
   const totalAmount = Object.values(cart).reduce<number>(
     (acc, item) => acc + item.quantity * item.price,
