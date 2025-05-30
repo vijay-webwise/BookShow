@@ -9,8 +9,12 @@ import BuyPage from "./pages/BuyPage/BuyPage";
 import CheckoutPage from "./pages/Checkout/CheckoutPage";
 import AboutUsPage from "./pages/AboutUs/Aboutus";
 import CategoryShows from "./components/CategoryDetails/CategoryDetails";
+import { useEffect } from "react";
 
 const App: FC = () => {
+   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
   return (
     <>
       <Router>

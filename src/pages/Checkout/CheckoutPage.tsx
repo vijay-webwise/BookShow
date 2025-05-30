@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 type CartItem = {
   quantity: number;
@@ -7,6 +7,9 @@ type CartItem = {
 };
 
 const CheckoutPage = () => {
+    useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
   const location = useLocation();
   const cart: Record<string, CartItem> = location.state?.cart || {};
 

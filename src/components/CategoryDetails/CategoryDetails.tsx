@@ -2,7 +2,10 @@ import { useState } from "react";
 import showsDetals from "@/constants/standUpShows";
 import { useNavigate, useParams } from "react-router-dom";
 import theatreShows from "@/constants/theatreShows";
-
+import musicShows from "@/constants/musicShows";
+import kidsandfamily from "@/constants/kidsandfamily";
+import { useEffect } from "react";
+import artAndCulture from "@/constants/artAndCulture";
 
 // const shows = [
 //   {
@@ -73,14 +76,25 @@ const ITEMS_PER_PAGE = 20;
 const CategoryShows = () => {
   const navigate = useNavigate();
   const { title } = useParams();
-  let shows: any = showsDetals
-  if(title==="Theatre and Drama"){
-    shows = theatreShows
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, [title]);
+  let shows: any = showsDetals;
+  if (title === "Theatre and Drama") {
+    shows = theatreShows;
   }
-  if(title==="Comedy"){
-    shows = showsDetals
+  if (title === "Comedy") {
+    shows = showsDetals;
   }
-
+  if (title === "Concerts") {
+    shows = musicShows;
+  }
+  if (title === "Kids and Family") {
+    shows = kidsandfamily;
+  }
+  if (title === "Art and Culture") {
+    shows = artAndCulture;
+  }
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(shows.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -92,7 +106,7 @@ const CategoryShows = () => {
     <div className="min-h-screen bg-[#121212] text-white px-4 py-8">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl md:text-4xl font-bold mb-8 border-b border-gray-700 pb-2">
-          {title} Shows
+          {title} {title === "Concerts" ? "" : "Shows"}
         </h1>
         {/* Cards */}
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -112,7 +126,9 @@ const CategoryShows = () => {
                 <p className="text-sm text-gray-400">{show.location}</p>
                 <button
                   onClick={() =>
-                    navigate(`/events/${show.title}`, { state: { movie: show } })
+                    navigate(`/events/${show.title}`, {
+                      state: { movie: show },
+                    })
                   }
                   className="mt-4 w-full bg-[#00FFC2] text-black font-semibold py-2 rounded-xl hover:bg-[#00e6af] transition"
                 >

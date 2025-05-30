@@ -4,7 +4,7 @@ export default [
     imageUrl:
       "https://res.cloudinary.com/dwzmsvp7f/image/upload/f_auto,w_1280/c_crop%2Cg_custom%2Fv1744446627%2Fpgzm1iemwrnyv3ofsex3.jpg",
     title: "Sky Jumper Trampoline Park",
-    year: 2024,
+    year: "Tuesday 10 June",
     languages: "Mumbai",
     tags: ["Fun", "Adventure", "Trampoline"],
     ua: "6+",
@@ -20,7 +20,7 @@ export default [
     imageUrl:
       "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-kisi-ko-batana-mat-ft-anubhav-singh-bassi-0-2025-3-9-t-8-12-52.jpg",
     title: "Kisi Ko Batana Mat",
-    year: 2022,
+    year: "Sat 7 June",
     languages: "Delhi",
     logoUrl:
       "https://in.bookmyshow.com/events/go-watch-manoj-live-ft-manoj-prabakar/ET00398271",

@@ -7,7 +7,7 @@ import styles from "./Categories.module.css";
 import KidsAndFun from "../../../public/kidsandfun.jpg";
 import Comedy from "../../../public/standupcomedy.jpg";
 import Drama from "../../../public/theatreshows.jpg";
-import Horror from "../../../public/horror.jpg";
+import Art from "../../../public/art.jpg";
 import Concerts from "../../../public/musicshows.jpg";
 import { useNavigate } from "react-router-dom";
 interface Category {
@@ -34,8 +34,8 @@ const categories: Category[] = [
   },
   {
     id: 6,
-    name: "Horror",
-    imageUrl: Horror,
+    name: "Art and Culture",
+    imageUrl: Art,
   },
   {
     id: 7,
@@ -89,7 +89,7 @@ const Categories: FC = () => {
             key={category.id}
             className={styles.carouselItem}
           >
-            <div className={styles.categoryCard}>
+            <div className={styles.categoryCard} >
               <img
                 src={category.imageUrl}
                 alt={category.name}

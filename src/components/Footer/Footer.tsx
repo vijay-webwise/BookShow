@@ -1,6 +1,4 @@
 import styles from "./Footer.module.css";
-import { FaFacebookSquare, FaInstagramSquare } from "react-icons/fa";
-import { FaSquareXTwitter, FaSquareYoutube } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
@@ -13,24 +11,29 @@ const Footer = () => {
             <img src="/EventsByEverrise.png" alt="logo" width={50} />{" "}
             <span>Events By Everrise</span>
           </div>
-          <h5>Connect With Us</h5>
-          <div className={styles.socialMediaIcons}>
+          {/* <h5>Connect With Us</h5> */}
+          {/* <div className={styles.socialMediaIcons}>
             <FaFacebookSquare />
             <FaSquareXTwitter />
             <FaInstagramSquare />
             <FaSquareYoutube />
-          </div>
+          </div> */}
         </div>
         <div className={styles.categories}>
           <div className={styles.categoryTitle}>Browse Categories</div>
           <div className={styles.categoriesList}>
-            <p onClick={()=>navigate("/category/Comedy")}>Stand Up</p>
-            <p onClick={()=>navigate("/category/Theatre and Drama")}>Theatre And Drama</p>
+            <p onClick={() => navigate("/category/Comedy")}>Stand Up</p>
+            <p onClick={() => navigate("/category/Theatre and Drama")}>
+              Theatre And Drama
+            </p>
+            <p onClick={() => navigate("/category/Kids and Family")}>Kids</p>
+            <p onClick={() => navigate("/category/Concerts")}>Concerts</p>
           </div>
         </div>
+
         <div className={styles.helpSection}>
           <div className={styles.helpTitle}>HELP</div>
-          <p onClick={()=>navigate("/about-us")}>About Us</p>
+          <p onClick={() => navigate("/about-us")}>About Us</p>
           {/* <p>Pricing Plan</p>
           <p>Faq Page</p>
           <p>Account & Billing</p>
@@ -59,7 +62,9 @@ const Footer = () => {
         </div> */}
       </div>
       <div className={styles.footerBottom}>
-        <div>© Events By Everrise 2025, Designed by Everrise Entertainments</div>
+        <div>
+          © Events By Everrise 2025, Designed by Everrise Entertainments
+        </div>
         {/* <div style={{cursor: 'pointer'}}>Privacy Policy</div> */}
       </div>
     </>

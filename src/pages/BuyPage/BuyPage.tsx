@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const BuyPage = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
   const location = useLocation();
   const showDetails = location.state?.showDetails;
   const show = {
@@ -19,13 +23,12 @@ const BuyPage = () => {
     description:
       showDetails?.description ||
       "After the great success of his previous show Bas kar bassi, Anubhav Singh Bassi is coming back to perform live on stage. This time, he will bring a whole new set of funny stories and jokes that will keep you entertained. Get ready to enjoy an exciting and hilarious performance that will make you laugh uncontrollably and leave you in high spirits.",
-    tickets: showDetails?.tickets || [
-    ],
+    tickets: showDetails?.tickets || [],
   };
 
   const [cart, setCart] = useState<Cart>({});
 
-  console.log(cart)
+  console.log(cart);
 
   interface CartItem {
     quantity: number;
@@ -49,8 +52,6 @@ const BuyPage = () => {
     (acc, item) => acc + item.quantity * item.price,
     0
   );
-
-
 
   return (
     <div className="min-h-screen bg-black text-white font-sans">
@@ -151,7 +152,9 @@ const BuyPage = () => {
           </div>
           <button
             className="bg-rose-600 hover:bg-rose-700 text-white font-semibold py-2 px-6 rounded"
-            onClick={() => navigate("/checkout", {state:{totalAmount,cart}})}
+            onClick={() =>
+              navigate("/checkout", { state: { totalAmount, cart } })
+            }
           >
             Proceed
           </button>
