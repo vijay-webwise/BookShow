@@ -28,12 +28,12 @@ const Footer = () => {
           <h3 className="text-base text-gray-300 mb-2">
             Got Questions? Call or Email Us 24/7
           </h3>
-          <p className="text-3xl font-bold mb-2">8117080404</p>
+          <p className="text-3xl font-bold mb-2">9838270835</p>
           <p className="text-base text-gray-400 mb-1">
             support@eventsbyeverrise.com
           </p>
-          <p className="text-base text-gray-400">Mon–Fri: 9:00–20:00</p>
-          <p className="text-base text-gray-400">Saturday: 11:00–15:00</p>
+          <p className="text-base text-gray-400">Monday-Sunday: 9:00–20:00</p>
+
         </div>
         {/* Browse Categories */}
         <div>
