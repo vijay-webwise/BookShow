@@ -10,15 +10,19 @@ import CheckoutPage from "./pages/Checkout/CheckoutPage";
 import AboutUsPage from "./pages/AboutUs/Aboutus";
 import CategoryShows from "./components/CategoryDetails/CategoryDetails";
 import { useEffect } from "react";
+import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
+import TermsAndConditions from "./pages/TermsAndConditon/TermsAndConditon";
+import RefundPolicy from "./pages/RefundPolicy/RefundPolicy";
+import FAQ from "./pages/FAQ/FAQs";
 
 const App: FC = () => {
-   useEffect(() => {
+  useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
   return (
     <>
       <Router>
-      <Sidebar />
+        <Sidebar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFoundPage />} />
@@ -27,9 +31,21 @@ const App: FC = () => {
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/category/:title" element={<CategoryShows />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route
+            path="/terms-and-conditions"
+            element={<TermsAndConditions />}
+          />
+           <Route
+            path="/refund-policy"
+            element={<RefundPolicy />}
+          />
+          <Route
+            path="/faqs"
+            element={<FAQ />}
+          />
         </Routes>
-      <Footer />
-
+        <Footer />
       </Router>
     </>
   );

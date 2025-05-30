@@ -86,7 +86,7 @@ const Suggestions: FC<SuggestionsProps> = ({ Heading, moviesList, numberEnabled 
           </span>
           {Heading}
         </div>
-        <div className={styles.rightPart}>View All &rarr;</div>
+        {/* <div className={styles.rightPart}>View All &rarr;</div> */}
       </div>
       <Slider {...settings}>
         {moviesList.map((movie, index) => (

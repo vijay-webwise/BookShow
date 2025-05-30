@@ -20,29 +20,30 @@
   
   .carouselContainer {
     background-color: #1a1a1a;
-    padding: 80px 50px 80px 50px;
-    text-align: center;
+    padding: 80px 50px 80px 75px;
+    text-align: start;
     animation: fadeIn 1s ease-in-out;
-
+      font-size: 1.875rem;
+        line-height: 2.25rem;
   }
   
   .title {
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.856rem;
     margin-bottom: 30px;
     animation: slideIn 0.5s ease-in-out;
     position: relative;
     display: inline-block;
   }
   
-  .title::after {
+  /* .title::after {
     content: '';
     display: block;
     width: 50%;
     height: 2px;
     background: linear-gradient(to right, #00ff00, #00ffff);
     margin: 10px auto 0;
-  }
+  } */
   
   .carouselItem {
     padding: 10px;
@@ -113,6 +114,7 @@
     padding: 15px 0;
     background: #333;
     border-radius: 0 0 15px 15px;
+    text-align: center;
   }
   @media (max-width: 768px) {
     .carouselItem {

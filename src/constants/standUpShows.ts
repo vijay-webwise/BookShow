@@ -4,7 +4,7 @@ const showsDetails = [
     title: "Abijit Ganguly Live",
     imageUrl:
       "https://yt3.googleusercontent.com/B_oMXLRlPM1nYMMUeo74At5kUQy6a7985ptLTVHS6xeKYE2B-X6m1K-3yR_MC-xlIRrLKRXUEOc=s900-c-k-c0x00ffffff-no-rj",
-    year: 2025,
+    year: "June 15, 2025",
     languages: "Ahmedabad",
     tags: ["Stand Up", "Comedy", "Live"],
     ua: "18+",
@@ -14,7 +14,7 @@ const showsDetails = [
     ],
     description:
       "Watch Abijit Ganguly live with his new hilarious set on modern life, marriage, and everything in between.",
-    date: "March 22, 2025",
+    date: "June 22, 2025",
     location: "Mishty Studio, Ahmedabad",
   },
   {
@@ -22,7 +22,7 @@ const showsDetails = [
     title: "Standup Test Drive by Harshil Pandya",
     imageUrl:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3OuBJYf-tqYjM_iXbimxUa7mBA3Ghdw_3pw&s",
-    year: 2025,
+    year: "June 13, 2025",
     languages: "Ahmedabad",
     tags: ["Trial Show", "Comedy", "Gujarati"],
     ua: "16+",
@@ -32,14 +32,14 @@ const showsDetails = [
     ],
     description:
       "A test drive of laughter and fun by Harshil Pandya—witness new material before anyone else!",
-    date: "March 23, 2025",
+    date: "June 23, 2025",
     location: "Youcomedy Club, Ahmedabad",
   },
   {
     id: 4,
     title: "Who Are You by Rahul Subramanian",
     imageUrl: "https://in.bmscdn.com/events/moviecard/ET00384155.jpg",
-    year: 2025,
+    year: "June 12, 2025",
     languages: "Ahmedabad",
     tags: ["Corporate Humor", "Observational", "Top Comic"],
     ua: "18+",
@@ -50,7 +50,7 @@ const showsDetails = [
     ],
     description:
       "Rahul Subramanian returns with his existentially hilarious special 'Who Are You'.",
-    date: "March 25, 2025",
+    date: "June 10, 2025",
     location: "H.K. Hall, Ahmedabad",
   },
   {
@@ -58,7 +58,7 @@ const showsDetails = [
     title: "Master Peace - Trial Solo By Madhur Virli",
     imageUrl:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJdV2y7iomdTinqVe9YpD9j3_GVsJEFly1rw&s",
-    year: 2025,
+    year:  "June 08, 2025",
     languages: "Ahmedabad",
     tags: ["Raw", "Solo Show", "Trial"],
     ua: "16+",
@@ -68,7 +68,7 @@ const showsDetails = [
     ],
     description:
       "Madhur Virli's brand new trial solo performance—raw, real, and ridiculously funny.",
-    date: "March 26, 2025",
+    date: "June 14, 2025",
     location: "HK Hall, Ellisbridge, Ahmedabad",
   },
  
@@ -120,7 +120,7 @@ const showsDetails = [
     ],
     description:
       "Pranav Sharma blends romance and humor into a heartfelt experience you won’t forget.",
-    date: "March 30, 2025",
+    date: "June 18, 2025",
     location: "Mehendi Navaz Jung Hall, Ahmedabad",
   },
   // {
