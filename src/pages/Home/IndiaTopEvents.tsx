@@ -45,7 +45,7 @@ const events = [
     year: "June 6 | 9PM",
     languages: "Mumbai",
     tags: ["Concert", "Music Shows"],
-    ua: "6+",
+    ua: "16+",
     tickets: [
       { type: "Regular Ticket", price: 2499 },
       { type: "Group of 3", price: 5999 },

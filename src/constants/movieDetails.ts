@@ -4,7 +4,7 @@ export default [
     imageUrl:
       "https://res.cloudinary.com/dwzmsvp7f/image/upload/f_auto,w_1280/c_crop%2Cg_custom%2Fv1744446627%2Fpgzm1iemwrnyv3ofsex3.jpg",
     title: "Sky Jumper Trampoline Park",
-    year: "Tuesday 10 June",
+    year: "Tuesday 10 June : 10:30 AM",
     languages: "Mumbai",
     tags: ["Fun", "Adventure", "Trampoline"],
     ua: "6+",
@@ -20,7 +20,7 @@ export default [
     imageUrl:
       "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-kisi-ko-batana-mat-ft-anubhav-singh-bassi-0-2025-3-9-t-8-12-52.jpg",
     title: "Kisi Ko Batana Mat",
-    year: "Sat 7 June",
+    year: "Sat 7 June | 7:30PM",
     languages: "Delhi",
     logoUrl:
       "https://in.bookmyshow.com/events/go-watch-manoj-live-ft-manoj-prabakar/ET00398271",
@@ -40,17 +40,17 @@ export default [
     imageUrl:
       "https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-dhyan-sangeet-meditation-program-mumbai-0-2025-5-6-t-14-4-5.jpg",
     title: "Dhyan Sangeet Meditation Program",
-    year: "Sun 8 June",
+    year: "Sun 20 July | 10:30 AM",
     languages: "Mumbai",
     logoUrl:
       "https://res.cloudinary.com/dqcr5yn0b/image/upload/v1721371785/1623408-t-9ec4d70dcf2b_q3nizj.webp",
     tags: ["Concert", "Sangeet", "Music Shows"],
     ua: "6+",
     tickets: [
-      { type: "SILVER", price: 199 },
-      { type: "GOLD", price: 499 },
-      { type: "PLATINUM", price: 799 },
-      { type: "DIAMOND", price: 999 },
+      { type: "Balcony", price: 500 },
+      { type: "Bronze", price: 900 },
+      { type: "Silver", price: 1500 },
+      { type: "DIAMOND", price: 3000 },
     ],
     description:
       "Dhyan Sangeet is a unique meditation program that combines the power of music and meditation to help you achieve a state of deep relaxation and inner peace. Join us for an immersive experience that will rejuvenate your mind, body, and soul.",

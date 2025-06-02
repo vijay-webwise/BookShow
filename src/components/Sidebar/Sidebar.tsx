@@ -1,13 +1,13 @@
 import { FC } from "react";
 import styles from "./Sidebar.module.css";
-import { CiSearch } from "react-icons/ci";
+// import { CiSearch } from "react-icons/ci";
 import { TiHome } from "react-icons/ti";
 import { BiSolidCategory } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { FaPeopleLine } from "react-icons/fa6";
 
 const sidebarItems = [
-  { icon: CiSearch, label: "Search", path: "" },
+  // { icon: CiSearch, label: "Search", path: "" },
   { icon: TiHome, label: "Home", path: "/" },
 
   { icon: FaPeopleLine, label: "About Us", path: "/about-us" },

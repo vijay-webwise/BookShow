@@ -68,7 +68,7 @@ const EventDetailsPage = () => {
       <div className="max-w-5xl mx-auto px-6 py-12 space-y-8">
         <div className="grid md:grid-cols-3 gap-6">
           <div>
-            <p className="text-gray-400 text-sm mb-1">Release Year</p>
+            <p className="text-gray-400 text-sm mb-1">Event Date</p>
             <p className="text-lg font-medium">{showDetails.year}</p>
           </div>
           <div>
